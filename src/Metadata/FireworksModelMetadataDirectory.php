@@ -27,7 +27,9 @@ final class FireworksModelMetadataDirectory extends AbstractOpenAiCompatibleMode
 {
     protected function getBaseCacheKey(): string
     {
-        return parent::getBaseCacheKey() . '_' . md5(FireworksConfig::getDefaultModelId());
+        return parent::getBaseCacheKey() . '_' . md5(
+            serialize(FireworksModelCatalog::all()) . '|' . FireworksConfig::getDefaultModelId()
+        );
     }
 
     /**
