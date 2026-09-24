@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Fireworks AI</title>
+  <defs>
+    <linearGradient id="fireworks-gradient" x1="16" y1="112" x2="112" y2="16" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff6b35"/>
+      <stop offset=".5" stop-color="#f7c948"/>
+      <stop offset="1" stop-color="#6c63ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="#111827"/>
+  <g fill="none" stroke="url(#fireworks-gradient)" stroke-linecap="round" stroke-width="8">
+    <path d="M64 64 64 18"/>
+    <path d="m64 64 32-32"/>
+    <path d="m64 64 46 0"/>
+    <path d="m64 64 32 32"/>
+    <path d="m64 64 0 46"/>
+    <path d="m64 64-32 32"/>
+    <path d="m64 64-46 0"/>
+    <path d="m64 64-32-32"/>
+  </g>
+  <circle cx="64" cy="64" r="11" fill="#fff"/>
+</svg>
