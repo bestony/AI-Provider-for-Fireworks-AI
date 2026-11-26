@@ -13,6 +13,7 @@ esac
 
 plugin_file="ai-provider-for-fireworks-ai.php"
 readme_file="readme.txt"
+config_file="src/Util/FireworksConfig.php"
 version=$(grep -m1 '^ \* Version:' "$plugin_file" | awk '{print $3}')
 IFS=. read -r major minor patch <<< "$version"
 case "$part" in
@@ -23,4 +24,5 @@ esac
 next="$major.$minor.$patch"
 perl -pi -e "s/^ \\* Version:.*/ * Version:           $next/" "$plugin_file"
 perl -pi -e "s/^Stable tag:.*/Stable tag:        $next/" "$readme_file"
+perl -pi -e "s/const VERSION = '[\d.]+'/const VERSION = '$next'/" "$config_file"
 printf 'Updated plugin version to %s. Add a changelog entry before committing.\n' "$next"

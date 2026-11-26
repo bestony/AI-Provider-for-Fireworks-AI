@@ -22,7 +22,7 @@ use WordPress\AiClient\Providers\Http\DTO\RequestOptions;
 
 final class FireworksConfig
 {
-    public const VERSION = '1.0.0';
+    public const VERSION = '1.0.1';
     public const PROVIDER_ID = 'fireworks';
     public const DEFAULT_BASE_URL = 'https://api.fireworks.ai/inference/v1';
     public const DEFAULT_MODEL = 'accounts/fireworks/models/glm-5p3-flash';
