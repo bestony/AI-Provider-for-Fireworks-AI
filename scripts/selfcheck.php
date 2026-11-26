@@ -120,8 +120,13 @@ check(
     FireworksConfig::getRequestTimeout() >= 60.0 && FireworksConfig::getConnectTimeout() >= 5.0,
     'timeouts are long enough for an LLM request'
 );
+$headerVersion = '';
+if (preg_match('/^ \* Version:\s*(\S+)/m', (string) file_get_contents($root . '/ai-provider-for-fireworks-ai.php'), $matches)) {
+    $headerVersion = $matches[1];
+}
+check($headerVersion !== '', 'plugin header declares a version');
 check(
-    FireworksConfig::getUserAgent() === 'ai-provider-for-fireworks-ai/1.0.0',
+    FireworksConfig::getUserAgent() === 'ai-provider-for-fireworks-ai/' . $headerVersion,
     'User-Agent identifies the plugin version'
 );
 check(!FireworksConfig::hasCredentials(), 'without the AI Client no credential is reported');
