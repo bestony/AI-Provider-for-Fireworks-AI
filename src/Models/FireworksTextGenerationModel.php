@@ -10,6 +10,10 @@ declare(strict_types=1);
 
 namespace FireworksAi\AiProvider\Models;
 
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 use FireworksAi\AiProvider\Util\FireworksConfig;
 use WordPress\AiClient\Providers\OpenAiCompatibleImplementation\AbstractOpenAiCompatibleTextGenerationModel;
 

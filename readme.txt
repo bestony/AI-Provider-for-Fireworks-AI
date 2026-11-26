@@ -3,7 +3,7 @@ Contributors:      bestony
 Tags:              ai, connector, fireworks, artificial-intelligence
 Requires at least: 7.0
 Tested up to:      7.1
-Stable tag:        1.0.0
+Stable tag:        1.0.1
 Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -51,7 +51,8 @@ router IDs are excluded because they use a separate endpoint and routing policy.
 
 == External services ==
 
-This plugin sends the selected model ID, prompts, conversation history, system instructions, image
+This plugin connects to the Fireworks AI API to provide Fireworks models to the WordPress AI Client.
+It sends the selected model ID, prompts, conversation history, system instructions, image
 URLs or inline image data, tool definitions and results, JSON schemas, sampling parameters, and
 custom options to Fireworks AI when a site uses the provider. Fireworks returns generated content,
 tool calls, reasoning content, and token usage. The plugin does not send data until the WordPress AI
@@ -67,6 +68,11 @@ Client performs a request, and it does not log prompts, tokens, cookies, or Auth
 * Privacy Policy: https://fireworks.ai/privacy-policy
 
 == Changelog ==
+
+= 1.0.1 =
+* Add ABSPATH guards to plugin and self-check files for direct-access protection.
+* Remove the manual load_plugin_textdomain call; WordPress.org loads translations automatically.
+* Clarify the external services disclosure for the Fireworks AI API.
 
 = 1.0.0 =
 * Initial release with the Fireworks OpenAI-compatible Chat Completions provider.

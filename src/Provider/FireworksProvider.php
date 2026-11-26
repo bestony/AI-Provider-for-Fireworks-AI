@@ -10,6 +10,10 @@ declare(strict_types=1);
 
 namespace FireworksAi\AiProvider\Provider;
 
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 use FireworksAi\AiProvider\Metadata\FireworksModelMetadataDirectory;
 use FireworksAi\AiProvider\Models\FireworksTextGenerationModel;
 use FireworksAi\AiProvider\Util\FireworksConfig;
